@@ -11,6 +11,8 @@ public class PlayerController2D : MonoBehaviour
     private Vector2 movement; // Stores the direction of player movement
     private bool isMovingHorizontally = true; // Flag to track if the player is moving horizontally
 
+ 
+    
     void Start()
     {
         // Initialize the Rigidbody2D component
@@ -25,11 +27,14 @@ public class PlayerController2D : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
+        Debug.Log(horizontalInput);
+        Debug.Log(verticalInput);
+        
         // Check if diagonal movement is allowed
         if (canMoveDiagonally)
         {
             // Set movement direction based on input
-            movement = new Vector2(horizontalInput, verticalInput);
+            movement = new Vector2(horizontalInput,verticalInput);
             // Optionally rotate the player based on movement direction
             RotatePlayer(horizontalInput, verticalInput);
         }
